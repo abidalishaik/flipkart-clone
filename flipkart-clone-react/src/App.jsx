@@ -1,6 +1,7 @@
 import "./App.css";
 
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Header/NavBar";
+import QuickMenu from "./components/QuickMenu";
 import { useState } from "react";
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      <QuickMenu />
     </div>
   );
 }
