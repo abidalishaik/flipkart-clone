@@ -17,7 +17,7 @@ import java.util.List;
 public class Products {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long productId;
 
     private String productName;
@@ -32,7 +32,8 @@ public class Products {
 
     @ManyToMany(cascade = {
             CascadeType.PERSIST,
-            CascadeType.MERGE
+            CascadeType.MERGE,
+            CascadeType.REFRESH
     }, fetch = FetchType.LAZY)
     @JoinTable(
             name = "user_product",

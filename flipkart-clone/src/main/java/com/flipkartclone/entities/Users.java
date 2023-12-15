@@ -17,7 +17,7 @@ import java.util.List;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long userId;
 
     private String userName;
@@ -29,7 +29,7 @@ public class Users {
     private List<Orders> orders;
 
     @ManyToMany(mappedBy = "users")
-    @JsonIgnore
     private List<Products> products;
+
 
 }

@@ -1,11 +1,9 @@
 package com.flipkartclone.repositories;
 
-import com.flipkartclone.entities.Users;
+import com.flipkartclone.entities.Products;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsersRepository extends JpaRepository<Users, Long> {
-
-
+public interface ProductRepository extends JpaRepository<Products, Long> {
 }

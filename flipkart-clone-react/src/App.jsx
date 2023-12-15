@@ -1,7 +1,7 @@
 import "./App.css";
 
+import FocusArea from "./components/QuickMenu";
 import NavBar from "./components/Header/NavBar";
-import QuickMenu from "./components/QuickMenu";
 import { useState } from "react";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <QuickMenu />
+      <FocusArea />
     </div>
   );
 }

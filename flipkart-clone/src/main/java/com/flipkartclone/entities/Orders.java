@@ -17,7 +17,7 @@ import java.util.Set;
 public class Orders {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.TABLE)
     private long orderId;
 
     @OneToMany(mappedBy = "orderId")

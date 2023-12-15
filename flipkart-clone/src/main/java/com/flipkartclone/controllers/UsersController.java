@@ -1,5 +1,6 @@
 package com.flipkartclone.controllers;
 
+import com.flipkartclone.dtos.UsersDto;
 import com.flipkartclone.entities.Users;
 import com.flipkartclone.service.UsersService;
 import lombok.AllArgsConstructor;
@@ -32,7 +33,7 @@ public class UsersController {
     }
 
     @PostMapping
-    public String getUserById(@RequestBody UserDto userDto) {
+    public String getUserById(@RequestBody UsersDto userDto) {
         Users user = new Users();
         user.setUserName(userDto.getUserName());
         user.setPassword(userDto.getPassword());
@@ -43,11 +44,5 @@ public class UsersController {
 
 }
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
-class UserDto {
-    private String userName;
-    private String password;
-}
+
 
