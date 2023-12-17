@@ -33,13 +33,12 @@ public class UsersController {
     }
 
     @PostMapping
-    public String getUserById(@RequestBody UsersDto userDto) {
+    public Users getUserById(@RequestBody UsersDto userDto) {
         Users user = new Users();
         user.setUserName(userDto.getUserName());
         user.setPassword(userDto.getPassword());
 
-        usersService.saveUser(user);
-        return "user saved successfully";
+        return usersService.saveUser(user);
     }
 
 }

@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -17,19 +16,15 @@ import java.util.List;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private long userId;
 
     private String userName;
 
     private String password;
 
-    @ManyToMany(mappedBy = "users")
-    @JsonIgnore
-    private List<Orders> orders;
-
-    @ManyToMany(mappedBy = "users")
-    private List<Products> products;
+    @OneToOne(mappedBy = "user")
+    private Orders order;
 
 
 }

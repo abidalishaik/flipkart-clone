@@ -53,7 +53,6 @@ public class ProductService {
         Products product = new Products().builder()
                 .productName(products.getProductName())
                 .productDescription(products.getProductDescription())
-                .productImage(products.getProductImage())
                 .build();
 
         Products savedProduct = productRepository.save(product);
