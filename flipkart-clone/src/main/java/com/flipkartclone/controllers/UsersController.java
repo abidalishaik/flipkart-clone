@@ -2,10 +2,7 @@ package com.flipkartclone.controllers;
 
 import com.flipkartclone.dtos.UsersDto;
 import com.flipkartclone.entities.Users;
-import com.flipkartclone.service.UsersService;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.flipkartclone.services.UsersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,7 +30,7 @@ public class UsersController {
     }
 
     @PostMapping
-    public Users getUserById(@RequestBody UsersDto userDto) {
+    public Users saveUser(@RequestBody UsersDto userDto) {
         Users user = new Users();
         user.setUserName(userDto.getUserName());
         user.setPassword(userDto.getPassword());

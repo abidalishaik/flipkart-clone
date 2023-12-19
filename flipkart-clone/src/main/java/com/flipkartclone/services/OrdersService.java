@@ -1,10 +1,8 @@
-package com.flipkartclone.service;
+package com.flipkartclone.services;
 
 import com.flipkartclone.dtos.OrdersDto;
-import com.flipkartclone.dtos.UsersDto;
 import com.flipkartclone.entities.Orders;
 import com.flipkartclone.entities.Users;
-import com.flipkartclone.payload.SaveOrderPayload;
 import com.flipkartclone.repositories.OrderRepository;
 import com.flipkartclone.repositories.UsersRepository;
 import org.modelmapper.ModelMapper;

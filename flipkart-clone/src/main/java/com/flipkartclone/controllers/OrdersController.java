@@ -1,10 +1,7 @@
 package com.flipkartclone.controllers;
 
 import com.flipkartclone.dtos.OrdersDto;
-import com.flipkartclone.dtos.UsersDto;
-import com.flipkartclone.entities.Orders;
-import com.flipkartclone.payload.SaveOrderPayload;
-import com.flipkartclone.service.OrdersService;
+import com.flipkartclone.services.OrdersService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

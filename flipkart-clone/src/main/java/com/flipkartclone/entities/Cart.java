@@ -1,8 +1,7 @@
 package com.flipkartclone.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,15 +15,16 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-public class Orders {
-
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long orderId;
+    private long cartId;
 
-    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private Users user;
+
+    @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY)
     private List<Products> products;
 
-    @OneToOne
-    private Users user;
 }

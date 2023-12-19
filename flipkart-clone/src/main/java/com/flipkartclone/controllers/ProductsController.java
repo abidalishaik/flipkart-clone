@@ -2,7 +2,7 @@ package com.flipkartclone.controllers;
 
 import com.flipkartclone.dtos.ProductsDto;
 import com.flipkartclone.entities.Products;
-import com.flipkartclone.service.ProductService;
+import com.flipkartclone.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,12 +19,6 @@ public class ProductsController {
         this.productService = productService;
     }
 
-    @PostMapping("/addProductToUserSelection")
-    public String addProductToUserSelection(@RequestParam(value = "productId") int id,
-                                            @RequestParam(value = "userId") int userId) {
-        productService.addProductToUserSelection(id, userId);
-        return String.format("Product with id {} added succesfully to user {}", id, userId);
-    }
 
     @PostMapping("/addProduct")
     public Products addProduct(@RequestBody ProductsDto products) {
@@ -33,10 +27,9 @@ public class ProductsController {
     }
 
     @GetMapping("/getAllProducts")
-    public List<Products> getAllProducts(){
+    public List<Products> getAllProducts() {
         return productService.getAllProducts();
     }
-
 
 
 }
