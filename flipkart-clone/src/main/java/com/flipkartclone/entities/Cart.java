@@ -2,6 +2,7 @@ package com.flipkartclone.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,8 +23,10 @@ public class Cart {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("user")
     private Users user;
 
+    @JsonIgnoreProperties("cart")
     @OneToMany(mappedBy = "cart", fetch = FetchType.LAZY)
     private List<Products> products;
 

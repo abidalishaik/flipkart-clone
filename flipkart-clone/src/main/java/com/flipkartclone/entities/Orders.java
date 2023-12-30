@@ -1,8 +1,6 @@
 package com.flipkartclone.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,5 +24,6 @@ public class Orders {
     private List<Products> products;
 
     @OneToOne
+    @JsonIgnoreProperties("user")
     private Users user;
 }
