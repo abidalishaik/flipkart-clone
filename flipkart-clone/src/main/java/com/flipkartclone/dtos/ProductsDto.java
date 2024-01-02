@@ -1,11 +1,9 @@
 package com.flipkartclone.dtos;
 
-import com.flipkartclone.entities.Orders;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Lob;
 
 @AllArgsConstructor
 @NoArgsConstructor

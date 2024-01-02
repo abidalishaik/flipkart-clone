@@ -9,11 +9,11 @@ import com.flipkartclone.entities.Users;
 import com.flipkartclone.repositories.CartRepository;
 import com.flipkartclone.repositories.ProductRepository;
 import com.flipkartclone.repositories.UsersRepository;
+import jakarta.persistence.EntityNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import java.util.List;
 
 @Service
