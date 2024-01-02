@@ -36,9 +36,9 @@ public class OrdersService {
         Users users = usersRepository.findById((long) userId)
                 .orElseThrow(() -> new EntityNotFoundException(String.format("Resource not found with id {}", userId)));
 
-        Orders orders = new Orders();
-        orders.setUser(users);
+        Orders order = new Orders();
+        users.setOrder(order);
 
-        return modelMapper.map(orderRepository.save(orders), OrdersDto.class);
+        return modelMapper.map(orderRepository.save(order), OrdersDto.class);
     }
 }

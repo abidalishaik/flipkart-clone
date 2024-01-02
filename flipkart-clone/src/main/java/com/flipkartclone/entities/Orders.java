@@ -23,7 +23,5 @@ public class Orders {
     @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
     private List<Products> products;
 
-    @OneToOne
-    @JsonIgnoreProperties("user")
-    private Users user;
+
 }

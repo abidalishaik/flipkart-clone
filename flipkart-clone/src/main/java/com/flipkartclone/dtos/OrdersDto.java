@@ -13,5 +13,4 @@ public class OrdersDto {
 
     private List<ProductsDto> products;
 
-    private UsersDto user;
 }
